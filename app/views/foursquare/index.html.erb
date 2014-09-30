@@ -1,0 +1,14 @@
+<div>
+  <%= form_for @form, url: search_foursquare_path, method: :get do |f| %>
+    <p>Near: <%= f.text_field :near %></p>
+    <p>Lat: <%= f.text_field :lat %></p>
+    <p>Lng: <%= f.text_field :lng %></p>
+    <p>Query: <%= f.text_field :query %></p>
+    <p>Venue Id: <%= f.text_field :venue_id %></p>
+    <p><%= f.submit 'Search' %></p>
+  <% end %>
+</div>
+
+<% if @results %>
+  <%= debug @results.venues %>
+<% end %>
